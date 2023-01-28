@@ -1,0 +1,56 @@
+{
+    "config": {
+        "about": {
+            "title": "Battle Engine Example",
+            "author": "pika",
+            "version": "1.0",
+            "tabTitle": "Battle Engine Example"
+        },
+        "typing": {
+            "enabled": true,
+            "delay": 15
+        },
+        "menu": {
+            "backMatchText": "back",
+            "sfx": "true"
+        }
+    },
+    "items": {
+        "muffin": {
+            "name": "Muffin",
+            "heals": 30,
+            "useText": "You ate the blueberry muffin. You recovered %recovered% hp!"
+        },
+        "pie": {
+            "name": "Pumpkin Pie",
+            "uses": 5,
+            "heals": 15,
+            "useText": "You ate a slice of the pumpkin pie. You recovered %recovered% hp! (%uses%/5) slices remain."
+        },
+        "apple": {
+            "name": "Apple",
+            "uses": 2,
+            "heals": 10,
+            "useText": "You ate a piece of the apple. You recovered %recovered% hp! (%uses%/2) slices remain."
+        }
+    },
+    "player": {
+        "health": 40,
+        "attackMin": 3,
+        "attackMax": 6,
+        "speedMin": 1,
+        "speedMax": 3
+    },
+    "enemy": {
+        "name": "Dummy",
+        "health": 30,
+        "speedMin": 2,
+        "speedMax": 4,
+        "attackMin": 2,
+        "attackMax": 4,
+        "blockChance": 5
+    },
+    "messages": {
+        "introMessage": "This is an example of the battle engine. Sentient Dummy attacks!"
+    }
+}

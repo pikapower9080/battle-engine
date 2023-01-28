@@ -1,0 +1,32 @@
+{
+  "name": "battle-engine",
+  "version": "1.0.0",
+  "description": "Vanilla JS turn based JSON battle system",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run webpack; node scripts/build.js",
+    "webpack": "MODE='production' webpack",
+    "dev": "MODE='development' webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pikapower9080/battle-engine.git"
+  },
+  "author": "pikapower9080",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pikapower9080/battle-engine/issues"
+  },
+  "homepage": "https://github.com/pikapower9080/battle-engine#readme",
+  "dependencies": {
+    "notiflix": "^3.2.5",
+    "typewriter-effect": "^2.19.0"
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.2",
+    "eslint": "^8.28.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  }
+}
