@@ -6,6 +6,23 @@ const config = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'main.js',
+    },
+    devServer: {
+        static: [
+            {
+                directory: path.join(__dirname, 'public')
+            },
+            {
+                directory: path.join(__dirname, 'dist'),
+                publicPath: '/dist'
+            }
+        ],
+        compress: true,
+        port: 3000,
+        allowedHosts: 'all',
+        client: {
+            overlay: true
+        }
     }
 };
 

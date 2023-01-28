@@ -1,6 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-const copyFiles = JSON.parse(fs.readFileSync('copy.json').toString())
 
 if (!fs.existsSync('build')) {
     fs.mkdirSync("build")
@@ -8,10 +7,7 @@ if (!fs.existsSync('build')) {
     fs.rmSync("build", {recursive: true})
     fs.mkdirSync("build")
 }
-copyFiles.forEach((file) => {
-    if (fs.existsSync(file)) {
-        fs.cpSync(file, path.resolve('build', file), {recursive: true})
-    } else {
-        console.warn("File or directory does not exist: " + file)
-    }
+fs.readdirSync("public").forEach((file) => {
+    fs.cpSync(path.resolve("public", file), path.resolve('build', file), {recursive: true})
 })
+fs.cpSync("dist", path.resolve("build", "dist"), {recursive: true})
