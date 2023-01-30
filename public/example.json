@@ -51,6 +51,7 @@
         "blockChance": 5
     },
     "messages": {
-        "introMessage": "This is an example of the battle engine. Sentient Dummy attacks!"
+        "introMessage": "This is an example of the battle engine. Sentient Dummy attacks!",
+        "attackMessage": ["You raised your sword... and did %s damage!", "You attacked! The enemy took %s damage."]
     }
 }

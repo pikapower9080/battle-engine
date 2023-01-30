@@ -3,7 +3,7 @@ window.typeThings = true
 window.typeDelay = 15
 
 const enemyRequiredProperties = ['name', 'health', 'speedMin', 'speedMax', 'attackMin', 'attackMax', 'blockChance']
-const requiredMessages = ['introMessage']
+const requiredMessages = ['introMessage', 'attackMessage']
 
 export function setupGame(data) {
     window.data = data
@@ -31,5 +31,14 @@ export function setupGame(data) {
         if ('delay' in data.config.typing) window.typeDelay = data.config.typing.delay
     }
     pasteOrType(data.messages.introMessage)
-    addOptions(["Fight", "Item", "Block"], [])
+
+    // Fight values
+    var enemyHealth = data.enemy.health
+
+    addOptions(["Fight", "Item", "Block"], [function() {
+        // Fight Action
+        const damageAmount = Math.floor(Math.random() * (data.player.attackMax - data.player.attackMin) + data.player.attackMin)
+        enemyHealth -= damageAmount
+        pasteOrType(data.messages.attackMessage[Math.floor(Math.random() * data.messages.attackMessage.length)].replaceAll("%s", damageAmount))
+    }, ()=>{}, ()=>{}])
 }

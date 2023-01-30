@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run webpack; node scripts/build.js",
     "webpack": "MODE='production' webpack",
-    "dev": "webpack serve"
+    "dev": "MODE='development' webpack serve --mode=development"
   },
   "repository": {
     "type": "git",

@@ -10,4 +10,4 @@ if (!fs.existsSync('build')) {
 fs.readdirSync("public").forEach((file) => {
     fs.cpSync(path.resolve("public", file), path.resolve('build', file), {recursive: true})
 })
-fs.cpSync("dist", path.resolve("build", "dist"), {recursive: true})
+fs.cpSync(path.resolve("dist", "main.js"), path.resolve("build", "main.js"))

@@ -7,16 +7,14 @@ const config = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'main.js',
     },
+    devtool: 'inline-source-map',
     devServer: {
         static: [
             {
                 directory: path.join(__dirname, 'public')
-            },
-            {
-                directory: path.join(__dirname, 'dist'),
-                publicPath: '/dist'
             }
         ],
+        watchFiles: ["src/*.js", "public"],
         compress: true,
         port: 3000,
         allowedHosts: 'all',
